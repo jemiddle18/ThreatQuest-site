@@ -1,121 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>ThreatQuest Terms of Use</title>
+import { Stack } from "expo-router";
+import { useMemo } from "react";
+import { ScrollView, StyleSheet, Text } from "react-native";
 
-<style>
-body{
-    max-width:850px;
-    margin:auto;
-    padding:40px;
-    font-family:Arial,sans-serif;
-    line-height:1.7;
-    color:#334155;
-}
+import { useAppTheme } from "../constants/ThemeContext";
+import type { ThemeColors } from "../constants/theme";
 
-h1,h2{
-    color:#0f172a;
-}
+export default function TermsScreen() {
+  const { colors } = useAppTheme();
+  const styles = useMemo(() => createStyles(colors), [colors]);
 
-small{
-    color:#64748b;
-}
-</style>
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Terms of Use",
+          headerBackTitle: "Settings",
+        }}
+      />
 
-</head>
+      <Text style={styles.title}>Terms of Use</Text>
+      <Text style={styles.subtitle}>Last Updated: September 2026</Text>
 
-<body>
+      <Text style={styles.paragraph}>
+        By accessing or using ThreatQuest™, you agree to these Terms of Use.
+      </Text>
 
-<h1>ThreatQuest Terms of Use</h1>
+      <Text style={styles.section}>Educational Purpose</Text>
 
-<small>Last Updated: July 2026</small>
+      <Text style={styles.paragraph}>
+        ThreatQuest is designed for cybersecurity awareness, education, and
+        training. The app provides simulated security scenarios and learning
+        content intended to help users recognize common cyber threats and safer
+        response practices.
+      </Text>
 
-<h2>Information We Collect</h2>
+      <Text style={styles.section}>Accounts and Progress</Text>
 
-<p>
-  By using ThreatQuest™, you agree to these terms.
-    </p>
+      <Text style={styles.paragraph}>
+        ThreatQuest may be used without signing in. Progress for unsigned users
+        may be stored locally on the device.
+      </Text>
 
-     <h2>Educational Purpose</h2>
+      <Text style={styles.paragraph}>
+        Users may optionally sign in using supported account providers, such as
+        Apple or Google, to access features such as cloud-backed progress and
+        synchronization. You are responsible for maintaining access to the
+        account method you choose.
+      </Text>
 
-      <p>
-        ThreatQuest is intended for cybersecurity awareness and educational
-        training purposes only.
-      </p>
+      <Text style={styles.paragraph}>
+        Progress data may include XP, achievements, streaks, training history,
+        performance statistics, and other information needed to provide app
+        features.
+      </Text>
 
-      <h2>Accounts and Progress</h2>
+      <Text style={styles.section}>Leaderboards</Text>
 
-      <p>
-        Users may sign in using Guest, Apple, or Google accounts. You are
-        responsible for maintaining access to the account method you choose.
-        Progress, XP, achievements, leaderboard names, and training history may
-        be stored to support cloud sync and app features.
-     </p>
+      <Text style={styles.paragraph}>
+        Participation in the public ThreatQuest leaderboard is optional. If you
+        choose to join the leaderboard, certain information may become visible
+        to other users, including your chosen leaderboard name, XP, rank,
+        streak, and selected training statistics.
+      </Text>
 
-      <h2>Leaderboards</h2>
+      <Text style={styles.paragraph}>
+        You must not use leaderboard names that are offensive, deceptive,
+        impersonate another person or organization, or otherwise misuse the
+        service.
+      </Text>
 
-      <p>
-        If you create a leaderboard name, certain gameplay information such as
-        your leaderboard name, XP, rank, streak, and training statistics may be
-        visible to other users. Do not use offensive, misleading, or
-        impersonating names.
-      </p>
+      <Text style={styles.section}>Acceptable Use</Text>
 
-      <h2>Acceptable Use</h2>
+      <Text style={styles.paragraph}>
+        You agree not to misuse ThreatQuest, interfere with its operation,
+        attempt to gain unauthorized access to app services or user data, abuse
+        leaderboard or account features, or use the app in a way that violates
+        applicable law.
+      </Text>
 
-      <p>
-        Users agree not to misuse the application or attempt to disrupt service
-        functionality.
-      </p>
+      <Text style={styles.section}>Intellectual Property</Text>
 
-      <h2>Intellectual Property</h2>
+      <Text style={styles.paragraph}>
+        ThreatQuest branding, software, training scenarios, educational
+        materials, graphics, and other original content are owned by or
+        licensed for use by ThreatQuest and may not be copied, redistributed,
+        or commercially exploited without permission except where permitted by
+        law.
+      </Text>
 
-      <p>
-        All content, branding, training materials, and software associated with
-        ThreatQuest™ remain the property of ThreatQuest.
-      </p>
+      <Text style={styles.section}>Features and Availability</Text>
 
-      <h2>Beta Features</h2>
+      <Text style={styles.paragraph}>
+        ThreatQuest may add, modify, test, or remove features, training content,
+        rankings, achievements, or other functionality as the app evolves. We
+        do not guarantee that every feature will always be available or remain
+        unchanged.
+      </Text>
 
-      <p>
-        ThreatQuest™ may include beta features that change over time. Features,
-        content, rankings, achievements, and availability may be modified as the
-        app improves.
-      </p>
+      <Text style={styles.section}>No Security Guarantee</Text>
 
-      <h2>No Guarantee</h2>
+      <Text style={styles.paragraph}>
+        Completing ThreatQuest training does not guarantee protection against
+        phishing, malware, fraud, social engineering, account compromise, or
+        other cybersecurity threats.
+      </Text>
 
-      <p>
-        Completion of training does not guarantee protection against phishing,
-        malware, fraud, or other cyber threats.
-      </p>
+      <Text style={styles.section}>Disclaimer</Text>
 
-      <h2>Limitation of Liability</h2>
+      <Text style={styles.paragraph}>
+        ThreatQuest is provided for educational and awareness purposes. You
+        remain responsible for evaluating real-world security decisions and
+        following the security policies and procedures applicable to you or
+        your organization.
+      </Text>
 
-      <p>
-        ThreatQuest™ is provided as an educational tool. We are not responsible
-        for losses, damages, or security incidents that may occur from relying
-        solely on the app.
-      </p>
+      <Text style={styles.section}>Limitation of Liability</Text>
 
-      <h2>Changes</h2>
+      <Text style={styles.paragraph}>
+        To the extent permitted by applicable law, ThreatQuest will not be
+        liable for indirect, incidental, consequential, or similar losses
+        arising from use of, inability to use, or reliance on the app or its
+        training content.
+      </Text>
 
-     <p>
-        These terms may be updated as the platform evolves.
-      </p>
+      <Text style={styles.section}>Changes to These Terms</Text>
 
-      <h2>Contact</h2>
+      <Text style={styles.paragraph}>
+        These Terms may be updated as ThreatQuest evolves. The date at the top
+        of this page will be updated when material changes are made. Continued
+        use of ThreatQuest after updated Terms become effective constitutes
+        acceptance of those updated Terms.
+      </Text>
 
-      <p>
+      <Text style={styles.section}>Contact</Text>
+
+      <Text style={styles.paragraph}>
         Questions about these Terms may be submitted through the in-app feedback
-        option.
-     </p>
+        or support options.
+      </Text>
+    </ScrollView>
+  );
+}
 
-      <p>
-        Continued use of ThreatQuest™ constitutes acceptance of these Terms of
-        Use.
-      </p>
+function createStyles(colors: ThemeColors) {
+  return StyleSheet.create({
+    container: {
+      padding: 20,
+      paddingBottom: 40,
+      backgroundColor: colors.background,
+      flexGrow: 1,
+    },
 
-</body>
-</html>
+    title: {
+      fontSize: 32,
+      fontWeight: "900",
+      marginBottom: 8,
+      color: colors.text,
+    },
+
+    subtitle: {
+      fontSize: 14,
+      color: colors.textMuted,
+      marginBottom: 20,
+    },
+
+    section: {
+      fontSize: 18,
+      fontWeight: "900",
+      marginTop: 20,
+      marginBottom: 8,
+      color: colors.text,
+    },
+
+    paragraph: {
+      fontSize: 15,
+      lineHeight: 24,
+      color: colors.textSecondary,
+      marginBottom: 8,
+    },
+  });
+}
