@@ -1,88 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>ThreatQuest Privacy Policy</title>
+import { Stack } from "expo-router";
+import { useMemo } from "react";
+import { ScrollView, StyleSheet, Text } from "react-native";
 
-<style>
-body{
-    max-width:850px;
-    margin:auto;
-    padding:40px;
-    font-family:Arial,sans-serif;
-    line-height:1.7;
-    color:#334155;
+import { useAppTheme } from "../constants/ThemeContext";
+import type { ThemeColors } from "../constants/theme";
+
+export default function PrivacyPolicyScreen() {
+  const { colors } = useAppTheme();
+  const styles = useMemo(() => createStyles(colors), [colors]);
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Privacy Policy",
+          headerBackTitle: "Settings",
+        }}
+      />
+
+      <Text style={styles.title}>Privacy Policy</Text>
+      <Text style={styles.subtitle}>Last Updated: September 2026</Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest™ respects your privacy. This Privacy Policy explains what
+        information may be collected when you use ThreatQuest, how that
+        information is used, and the choices available to you.
+      </Text>
+
+      <Text style={styles.section}>Information We Collect</Text>
+
+      <Text style={styles.paragraph}>
+        The information ThreatQuest processes depends on how you use the app.
+        If you create or sign in to an account, account information may include
+        your email address, authentication provider, user ID, display
+        information, leaderboard name, and account preferences.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest also stores training-related information such as XP, ranks,
+        achievements, streaks, quiz and training history, performance
+        statistics, learning recommendations, and other progress information
+        needed to provide app features.
+      </Text>
+
+      <Text style={styles.section}>Local Training Data</Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest may be used without signing in. When you use the app without
+        an account, training progress and related preferences may be stored
+        locally on your device.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        Local-only progress may not be recoverable if the app is deleted, app
+        data is cleared, or the device is lost or replaced unless that progress
+        has been associated with a supported account and synchronized.
+      </Text>
+
+      <Text style={styles.section}>Accounts and Cloud Sync</Text>
+
+      <Text style={styles.paragraph}>
+        If you sign in using a supported account provider, such as Apple or
+        Google, certain account and training information may be stored using
+        cloud services to support features such as progress synchronization,
+        account recovery, and use across supported devices.
+      </Text>
+
+      <Text style={styles.section}>Public Leaderboards</Text>
+
+      <Text style={styles.paragraph}>
+        Participation in the public ThreatQuest leaderboard is optional. If you
+        choose to join, information associated with your public leaderboard
+        profile may be visible to other users. This may include your chosen
+        leaderboard name, XP, rank, streak, and selected training statistics.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        Your email address and other private account information are not
+        intended to be included in your public leaderboard profile.
+      </Text>
+
+      <Text style={styles.section}>How We Use Information</Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest uses information to provide and maintain training features,
+        track progress, calculate XP and ranks, award achievements, maintain
+        streaks, personalize learning recommendations, synchronize eligible
+        account data, operate optional leaderboard features, troubleshoot
+        issues, and improve the learning experience.
+      </Text>
+
+      <Text style={styles.section}>Service Providers</Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest does not sell your personal information. We may use
+        third-party service providers that process information as necessary to
+        operate the app. For example, Firebase services may be used for
+        authentication, cloud data storage, and related application
+        functionality.
+      </Text>
+
+      <Text style={styles.section}>Data Retention and Deletion</Text>
+
+      <Text style={styles.paragraph}>
+        Account and training information may be retained while needed to provide
+        ThreatQuest features and maintain your account. ThreatQuest provides
+        options within the app to reset training progress and, where
+        applicable, delete your account.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        Deleting an account is intended to remove the associated ThreatQuest
+        account data and public leaderboard profile maintained by ThreatQuest,
+        subject to information that may need to be retained for legal,
+        security, fraud-prevention, or technical purposes.
+      </Text>
+
+      <Text style={styles.section}>Data Security</Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest uses reasonable technical and organizational measures
+        designed to protect information processed through the app. However, no
+        method of electronic storage or transmission can be guaranteed to be
+        completely secure.
+      </Text>
+
+      <Text style={styles.section}>Your Choices</Text>
+
+      <Text style={styles.paragraph}>
+        You may use supported portions of ThreatQuest without signing in, choose
+        whether to participate in the public leaderboard, manage supported app
+        preferences, reset training progress, and delete your account where
+        available.
+      </Text>
+
+      <Text style={styles.section}>Feedback and Support</Text>
+
+      <Text style={styles.paragraph}>
+        Information you voluntarily provide through feedback or support
+        features may be used to respond to your request, investigate reported
+        issues, and improve ThreatQuest.
+      </Text>
+
+      <Text style={styles.section}>Children&apos;s Privacy</Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest is not directed to children under the age of 13, and we do
+        not knowingly collect personal information from children under 13. If
+        we learn that such information has been collected, we will take
+        appropriate steps to delete it.
+      </Text>
+
+      <Text style={styles.section}>Changes to This Policy</Text>
+
+      <Text style={styles.paragraph}>
+        This Privacy Policy may be updated as ThreatQuest evolves. When material
+        changes are made, the date at the top of this page will be updated.
+      </Text>
+
+      <Text style={styles.section}>Contact</Text>
+
+      <Text style={styles.paragraph}>
+        If you have questions about this Privacy Policy or your information, you
+        may contact us through the in-app feedback or support options.
+      </Text>
+    </ScrollView>
+  );
 }
 
-h1,h2{
-    color:#0f172a;
+function createStyles(colors: ThemeColors) {
+  return StyleSheet.create({
+    container: {
+      padding: 20,
+      paddingBottom: 40,
+      backgroundColor: colors.background,
+      flexGrow: 1,
+    },
+
+    title: {
+      fontSize: 32,
+      fontWeight: "900",
+      marginBottom: 8,
+      color: colors.text,
+    },
+
+    subtitle: {
+      fontSize: 14,
+      color: colors.textMuted,
+      marginBottom: 20,
+    },
+
+    section: {
+      fontSize: 18,
+      fontWeight: "900",
+      marginTop: 20,
+      marginBottom: 8,
+      color: colors.text,
+    },
+
+    paragraph: {
+      fontSize: 15,
+      lineHeight: 24,
+      color: colors.textSecondary,
+      marginBottom: 8,
+    },
+  });
 }
-
-small{
-    color:#64748b;
-}
-</style>
-
-</head>
-
-<body>
-
-<h1>ThreatQuest Privacy Policy</h1>
-
-<small>Last Updated: July 2026</small>
-
-<h2>Information We Collect</h2>
-
-<p>
-ThreatQuest may collect your email address, authentication provider,
-user ID, leaderboard name, and training progress when you choose to
-create an account.
-</p>
-
-<p>
-Training information such as XP, achievements, streaks, quiz history,
-leaderboard statistics, and personalized learning recommendations may
-be stored to provide app functionality and synchronize progress across
-devices.
-</p>
-
-<h2>How We Use Information</h2>
-
-<p>
-Information is used solely to provide cybersecurity awareness
-training, synchronize progress, personalize learning, improve the app,
-and operate leaderboards.
-</p>
-
-<h2>Data Sharing</h2>
-
-<p>
-ThreatQuest does not sell or rent your personal information.
-Information is only shared with trusted service providers necessary to
-operate the application, such as Firebase authentication and cloud
-storage services.
-</p>
-
-<h2>Security</h2>
-
-<p>
-Information transmitted between your device and our cloud services is
-encrypted using industry-standard security protocols.
-</p>
-
-<h2>Your Choices</h2>
-
-<p>
-You may use Guest mode, sign in using Apple or Google, or request that
-your cloud account be removed by contacting us.
-</p>
-
-<h2>Contact</h2>
-
-<p>
-Questions regarding this Privacy Policy may be submitted using the
-feedback option within the app.
-</p>
-
-</body>
-</html>
