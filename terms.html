@@ -18,7 +18,6 @@ export default function TermsScreen() {
         }}
       />
 
-      <Text style={styles.title}>Terms of Use</Text>
       <Text style={styles.subtitle}>Last Updated: September 2026</Text>
 
       <Text style={styles.paragraph}>
@@ -32,6 +31,41 @@ export default function TermsScreen() {
         training. The app provides simulated security scenarios and learning
         content intended to help users recognize common cyber threats and safer
         response practices.
+      </Text>
+
+      <Text style={styles.section}>
+        Third-Party Names, Trademarks, and Simulated Content
+      </Text>
+
+      <Text style={styles.paragraph}>
+        ThreatQuest may reference third-party companies, products, services,
+        platforms, applications, and trademarks within cybersecurity training
+        scenarios. These references are used for identification, educational,
+        and cybersecurity awareness purposes.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        Unless expressly stated otherwise, ThreatQuest is not affiliated with,
+        sponsored by, endorsed by, or an official product of any third-party
+        company referenced in the app. Third-party company names, product names,
+        service names, logos, and trademarks remain the property of their
+        respective owners.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        Email addresses, domains, URLs, account information, authentication
+        details, publishers, organizations, employees, infrastructure, security
+        events, and workflows presented in training scenarios may be fictional,
+        simulated, modified, or created solely for educational purposes. Their
+        appearance in ThreatQuest should not be interpreted as representing the
+        current systems, infrastructure, security practices, communications, or
+        operations of any referenced company or organization.
+      </Text>
+
+      <Text style={styles.paragraph}>
+        References to real products or services do not indicate that a
+        referenced company participated in, reviewed, approved, or provided the
+        associated ThreatQuest training scenario.
       </Text>
 
       <Text style={styles.section}>Accounts and Progress</Text>
@@ -81,11 +115,13 @@ export default function TermsScreen() {
       <Text style={styles.section}>Intellectual Property</Text>
 
       <Text style={styles.paragraph}>
-        ThreatQuest branding, software, training scenarios, educational
-        materials, graphics, and other original content are owned by or
-        licensed for use by ThreatQuest and may not be copied, redistributed,
-        or commercially exploited without permission except where permitted by
-        law.
+        ThreatQuest branding, software, original training scenarios,
+        educational materials, graphics, and other original content are owned
+        by or licensed for use by ThreatQuest and may not be copied,
+        redistributed, or commercially exploited without permission except
+        where permitted by law. Third-party names, trademarks, products,
+        services, and other third-party intellectual property referenced in the
+        app remain the property of their respective owners.
       </Text>
 
       <Text style={styles.section}>Features and Availability</Text>
@@ -151,15 +187,9 @@ function createStyles(colors: ThemeColors) {
       flexGrow: 1,
     },
 
-    title: {
-      fontSize: 32,
-      fontWeight: "900",
-      marginBottom: 8,
-      color: colors.text,
-    },
-
     subtitle: {
-      fontSize: 14,
+      fontSize: 13,
+      fontWeight: "700",
       color: colors.textMuted,
       marginBottom: 20,
     },
