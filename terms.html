@@ -1,212 +1,378 @@
-import { Stack } from "expo-router";
-import { useMemo } from "react";
-import { ScrollView, StyleSheet, Text } from "react-native";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
 
-import { useAppTheme } from "../constants/ThemeContext";
-import type { ThemeColors } from "../constants/theme";
+  <title>Terms of Use | ThreatQuest</title>
 
-export default function TermsScreen() {
-  const { colors } = useAppTheme();
-  const styles = useMemo(() => createStyles(colors), [colors]);
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #020817;
+      --surface: #0f172a;
+      --border: #243247;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+    }
 
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Stack.Screen
-        options={{
-          title: "Terms of Use",
-          headerBackTitle: "Settings",
-        }}
-      />
+    * {
+      box-sizing: border-box;
+    }
 
-      <Text style={styles.subtitle}>Last Updated: September 2026</Text>
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.7;
+    }
 
-      <Text style={styles.paragraph}>
-        By accessing or using ThreatQuest™, you agree to these Terms of Use.
-      </Text>
+    header {
+      padding: 28px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
 
-      <Text style={styles.section}>Educational Purpose</Text>
+    .header-inner {
+      max-width: 850px;
+      margin: auto;
+    }
 
-      <Text style={styles.paragraph}>
-        ThreatQuest is designed for cybersecurity awareness, education, and
-        training. The app provides simulated security scenarios and learning
-        content intended to help users recognize common cyber threats and safer
-        response practices.
-      </Text>
+    .brand {
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: none;
+    }
 
-      <Text style={styles.section}>
-        Third-Party Names, Trademarks, and Simulated Content
-      </Text>
+    main {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 36px 20px 70px;
+    }
 
-      <Text style={styles.paragraph}>
-        ThreatQuest may reference third-party companies, products, services,
-        platforms, applications, and trademarks within cybersecurity training
-        scenarios. These references are used for identification, educational,
-        and cybersecurity awareness purposes.
-      </Text>
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
 
-      <Text style={styles.paragraph}>
-        Unless expressly stated otherwise, ThreatQuest is not affiliated with,
-        sponsored by, endorsed by, or an official product of any third-party
-        company referenced in the app. Third-party company names, product names,
-        service names, logos, and trademarks remain the property of their
-        respective owners.
-      </Text>
+    h2 {
+      font-size: 20px;
+      margin: 34px 0 12px;
+      color: var(--text);
+    }
 
-      <Text style={styles.paragraph}>
-        Email addresses, domains, URLs, account information, authentication
-        details, publishers, organizations, employees, infrastructure, security
-        events, and workflows presented in training scenarios may be fictional,
-        simulated, modified, or created solely for educational purposes. Their
-        appearance in ThreatQuest should not be interpreted as representing the
-        current systems, infrastructure, security practices, communications, or
-        operations of any referenced company or organization.
-      </Text>
+    p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
 
-      <Text style={styles.paragraph}>
-        References to real products or services do not indicate that a
-        referenced company participated in, reviewed, approved, or provided the
-        associated ThreatQuest training scenario.
-      </Text>
+    .updated {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
 
-      <Text style={styles.section}>Accounts and Progress</Text>
+    a {
+      color: var(--accent);
+      overflow-wrap: anywhere;
+    }
 
-      <Text style={styles.paragraph}>
-        ThreatQuest may be used without signing in. Progress for unsigned users
-        may be stored locally on the device.
-      </Text>
+    a:hover {
+      text-decoration: underline;
+    }
 
-      <Text style={styles.paragraph}>
-        Users may optionally sign in using supported account providers, such as
-        Apple or Google, to access features such as cloud-backed progress and
-        synchronization. You are responsible for maintaining access to the
-        account method you choose.
-      </Text>
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+    }
 
-      <Text style={styles.paragraph}>
-        Progress data may include XP, achievements, streaks, training history,
-        performance statistics, and other information needed to provide app
-        features.
-      </Text>
+    footer a {
+      margin: 0 10px;
+    }
+  </style>
+</head>
 
-      <Text style={styles.section}>Leaderboards</Text>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        ThreatQuest™
+      </a>
+    </div>
+  </header>
 
-      <Text style={styles.paragraph}>
-        Participation in the public ThreatQuest leaderboard is optional. If you
-        choose to join the leaderboard, certain information may become visible
-        to other users, including your chosen leaderboard name, XP, rank,
-        streak, and selected training statistics.
-      </Text>
+  <main>
+    <h1>Terms of Use</h1>
+    <p class="updated">Last Updated: October 2026</p>
 
-      <Text style={styles.paragraph}>
-        You must not use leaderboard names that are offensive, deceptive,
-        impersonate another person or organization, or otherwise misuse the
-        service.
-      </Text>
+    <p>
+      By accessing or using ThreatQuest™, you agree
+      to these Terms of Use.
+    </p>
 
-      <Text style={styles.section}>Acceptable Use</Text>
+    <h2>Educational Purpose</h2>
+    <p>
+      ThreatQuest is designed for cybersecurity awareness,
+      education, and training. The app provides simulated
+      security scenarios and learning content intended to
+      help users recognize common cyber threats and safer
+      response practices.
+    </p>
 
-      <Text style={styles.paragraph}>
-        You agree not to misuse ThreatQuest, interfere with its operation,
-        attempt to gain unauthorized access to app services or user data, abuse
-        leaderboard or account features, or use the app in a way that violates
-        applicable law.
-      </Text>
+    <h2>
+      Third-Party Names, Trademarks, and Simulated Content
+    </h2>
 
-      <Text style={styles.section}>Intellectual Property</Text>
+    <p>
+      ThreatQuest may reference third-party companies,
+      products, services, platforms, applications, and
+      trademarks within cybersecurity training scenarios.
+      These references are used for identification,
+      educational, and cybersecurity awareness purposes.
+    </p>
 
-      <Text style={styles.paragraph}>
-        ThreatQuest branding, software, original training scenarios,
-        educational materials, graphics, and other original content are owned
-        by or licensed for use by ThreatQuest and may not be copied,
-        redistributed, or commercially exploited without permission except
-        where permitted by law. Third-party names, trademarks, products,
-        services, and other third-party intellectual property referenced in the
-        app remain the property of their respective owners.
-      </Text>
+    <p>
+      Unless expressly stated otherwise, ThreatQuest is
+      not affiliated with, sponsored by, endorsed by, or
+      an official product of any third-party company
+      referenced in the app. Third-party company names,
+      product names, service names, logos, and trademarks
+      remain the property of their respective owners.
+    </p>
 
-      <Text style={styles.section}>Features and Availability</Text>
+    <p>
+      Email addresses, domains, URLs, account information,
+      authentication details, publishers, organizations,
+      employees, infrastructure, security events, and
+      workflows presented in training scenarios may be
+      fictional, simulated, modified, or created solely
+      for educational purposes. Their appearance in
+      ThreatQuest should not be interpreted as representing
+      the current systems, infrastructure, security
+      practices, communications, or operations of any
+      referenced company or organization.
+    </p>
 
-      <Text style={styles.paragraph}>
-        ThreatQuest may add, modify, test, or remove features, training content,
-        rankings, achievements, or other functionality as the app evolves. We
-        do not guarantee that every feature will always be available or remain
-        unchanged.
-      </Text>
+    <p>
+      References to real products or services do not
+      indicate that a referenced company participated in,
+      reviewed, approved, or provided the associated
+      ThreatQuest training scenario.
+    </p>
 
-      <Text style={styles.section}>No Security Guarantee</Text>
+    <h2>Accounts and Progress</h2>
 
-      <Text style={styles.paragraph}>
-        Completing ThreatQuest training does not guarantee protection against
-        phishing, malware, fraud, social engineering, account compromise, or
-        other cybersecurity threats.
-      </Text>
+    <p>
+      ThreatQuest may be used without signing in.
+      Progress for unsigned users may be stored locally
+      on the device.
+    </p>
 
-      <Text style={styles.section}>Disclaimer</Text>
+    <p>
+      Users may optionally sign in using supported account
+      providers, such as Apple or Google, to access
+      features such as cloud-backed progress and
+      synchronization. You are responsible for maintaining
+      access to the account method you choose.
+    </p>
 
-      <Text style={styles.paragraph}>
-        ThreatQuest is provided for educational and awareness purposes. You
-        remain responsible for evaluating real-world security decisions and
-        following the security policies and procedures applicable to you or
-        your organization.
-      </Text>
+    <p>
+      Progress data may include XP, achievements, streaks,
+      training history, performance statistics, and other
+      information needed to provide app features.
+    </p>
 
-      <Text style={styles.section}>Limitation of Liability</Text>
+    <h2>Leaderboards</h2>
 
-      <Text style={styles.paragraph}>
-        To the extent permitted by applicable law, ThreatQuest will not be
-        liable for indirect, incidental, consequential, or similar losses
-        arising from use of, inability to use, or reliance on the app or its
-        training content.
-      </Text>
+    <p>
+      Participation in the public ThreatQuest leaderboard
+      is optional. If you choose to join the leaderboard,
+      certain information may become visible to other
+      users, including your chosen leaderboard name, XP,
+      rank, streak, and selected training statistics.
+    </p>
 
-      <Text style={styles.section}>Changes to These Terms</Text>
+    <p>
+      You must not use leaderboard names that are offensive,
+      deceptive, impersonate another person or organization,
+      or otherwise misuse the service.
+    </p>
 
-      <Text style={styles.paragraph}>
-        These Terms may be updated as ThreatQuest evolves. The date at the top
-        of this page will be updated when material changes are made. Continued
-        use of ThreatQuest after updated Terms become effective constitutes
-        acceptance of those updated Terms.
-      </Text>
+    <h2>ThreatQuest Pro Subscriptions</h2>
 
-      <Text style={styles.section}>Contact</Text>
+    <p>
+      ThreatQuest offers optional auto-renewable
+      subscriptions that provide access to additional
+      features, including unlimited training sessions
+      and unlimited Focus Sessions.
+    </p>
 
-      <Text style={styles.paragraph}>
-        Questions about these Terms may be submitted through the in-app feedback
-        or support options.
-      </Text>
-    </ScrollView>
-  );
-}
+    <p>
+      ThreatQuest Pro is available through monthly
+      and yearly subscription plans.
+    </p>
 
-function createStyles(colors: ThemeColors) {
-  return StyleSheet.create({
-    container: {
-      padding: 20,
-      paddingBottom: 40,
-      backgroundColor: colors.background,
-      flexGrow: 1,
-    },
+    <p>
+      Subscription prices are displayed in the app before
+      purchase and may vary based on your country, currency,
+      applicable taxes, and Apple's pricing.
+    </p>
 
-    subtitle: {
-      fontSize: 13,
-      fontWeight: "700",
-      color: colors.textMuted,
-      marginBottom: 20,
-    },
+    <p>
+      Payment is charged to your Apple Account upon
+      confirmation of purchase.
+    </p>
 
-    section: {
-      fontSize: 18,
-      fontWeight: "900",
-      marginTop: 20,
-      marginBottom: 8,
-      color: colors.text,
-    },
+    <p>
+      Subscriptions automatically renew unless canceled
+      at least 24 hours before the end of the current
+      subscription period.
+    </p>
 
-    paragraph: {
-      fontSize: 15,
-      lineHeight: 24,
-      color: colors.textSecondary,
-      marginBottom: 8,
-    },
-  });
-}
+    <p>
+      Your Apple Account may be charged for renewal within
+      24 hours before the end of the current period.
+    </p>
+
+    <p>
+      You can manage or cancel your subscription at any
+      time through your device's Settings under
+      Apple Account &gt; Subscriptions.
+    </p>
+
+    <p>
+      Canceling a subscription generally stops future
+      renewals. Access to paid features ordinarily
+      continues until the end of the current paid period.
+    </p>
+
+    <p>
+      Subscription purchases, renewals, cancellations,
+      and refunds are subject to Apple's applicable
+      billing policies.
+    </p>
+
+    <p>
+      For additional subscription information, see
+      <a href="https://support.apple.com/en-us/118428"
+         target="_blank" rel="noopener noreferrer">
+        Apple's subscription management guidance
+      </a>.
+    </p>
+
+    <h2>Acceptable Use</h2>
+
+    <p>
+      You agree not to misuse ThreatQuest, interfere with
+      its operation, attempt to gain unauthorized access
+      to app services or user data, abuse leaderboard or
+      account features, or use the app in a way that
+      violates applicable law.
+    </p>
+
+    <h2>Intellectual Property</h2>
+
+    <p>
+      ThreatQuest branding, software, original training
+      scenarios, educational materials, graphics, and
+      other original content are owned by or licensed
+      for use by ThreatQuest and may not be copied,
+      redistributed, or commercially exploited without
+      permission except where permitted by law.
+      Third-party names, trademarks, products, services,
+      and other third-party intellectual property
+      referenced in the app remain the property of
+      their respective owners.
+    </p>
+
+    <h2>Features and Availability</h2>
+
+    <p>
+      ThreatQuest may add, modify, test, or remove
+      features, training content, rankings, achievements,
+      or other functionality as the app evolves. We do
+      not guarantee that every feature will always be
+      available or remain unchanged.
+    </p>
+
+    <h2>No Security Guarantee</h2>
+
+    <p>
+      Completing ThreatQuest training does not guarantee
+      protection against phishing, malware, fraud,
+      social engineering, account compromise, or other
+      cybersecurity threats.
+    </p>
+
+    <h2>Disclaimer</h2>
+
+    <p>
+      ThreatQuest is provided for educational and awareness
+      purposes. You remain responsible for evaluating
+      real-world security decisions and following the
+      security policies and procedures applicable to
+      you or your organization.
+    </p>
+
+    <h2>Limitation of Liability</h2>
+
+    <p>
+      To the extent permitted by applicable law,
+      ThreatQuest will not be liable for indirect,
+      incidental, consequential, or similar losses
+      arising from use of, inability to use, or reliance
+      on the app or its training content.
+    </p>
+
+    <h2>Changes to These Terms</h2>
+
+    <p>
+      These Terms may be updated as ThreatQuest evolves.
+      The date at the top of this page will be updated
+      when material changes are made. Continued use of
+      ThreatQuest after updated Terms become effective
+      constitutes acceptance of those updated Terms.
+    </p>
+
+    <h2>Contact</h2>
+
+    <p>
+      Questions about these Terms may be submitted
+      through the in-app feedback or support options.
+    </p>
+
+    <h2>Apple Standard End User License Agreement</h2>
+
+    <p>
+      Where applicable, your use of ThreatQuest is also
+      subject to Apple's Standard End User License
+      Agreement:
+      <a
+        href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Apple's Standard EULA
+      </a>.
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© 2026 ThreatQuest. All rights reserved.</p>
+
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+  </footer>
+</body>
+</html>
